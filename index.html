@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zapatería Dedos</title>
-    <script>
+    
         // Variables para el carrito
         let cantidadProductos = 0;
         let totalGastado = 0;
@@ -71,7 +71,7 @@ function validarFormulario(event) {
         window.onload = function() {
             animarTextoEmpresa();
         }
-    </script>
+    
 </head>
 <body>
 
@@ -81,7 +81,7 @@ function validarFormulario(event) {
     <tr>
         <!-- Logo alineado a la izquierda -->
         <td width="20%" align="left">
-            <img src="img/dedos.jpg" alt="Logo de la tienda" width="80" height="auto">
+            <img src="dedos.jpg" alt="Logo de la tienda" width="80" height="auto">
         </td>
 
         <!-- Menú de navegación en el centro -->
@@ -96,7 +96,7 @@ function validarFormulario(event) {
     <header>
         <div class="header-right">
             <div class="carrito">
-                <img src="../tienda zapatilla/img/carrito de compras.png" alt="Carrito de Compras" width="30" height="auto">
+                <img src="carrito de compras.png" alt="Carrito de Compras" width="30" height="auto">
                 <span id="cantidadProductos">0</span> productos |
                 Total: $<span id="totalGastado">0.00</span>
             </div>
@@ -116,36 +116,36 @@ function validarFormulario(event) {
     <table width="40%" cellpadding="5" bgcolor="#d3d3d3" style="margin-left: 0;">
         <tr>
             <td align="center" bgcolor="#f0f8ff">
-                <img src="../tienda zapatilla/img/adidas.jpg" alt="Zapatillas Adidas" width="100">
+                <img src="adidas.jpg" alt="Zapatillas Adidas" width="100">
                 <p>Zapatillas Adidas - $120.00</p>
                 <button onclick="agregarAlCarrito(120)">Agregar al Carrito</button>
             </td>
             <td align="center" bgcolor="#f0f8ff">
-                <img src="../tienda zapatilla/img/nike.jpeg" alt="Zapatillas Nike" width="100">
+                <img src="nike.jpeg" alt="Zapatillas Nike" width="100">
                 <p>Zapatillas Nike - $130.00</p>
                 <button onclick="agregarAlCarrito(130)">Agregar al Carrito</button>
             </td>
         </tr>
         <tr>
             <td align="center" bgcolor="#f0f8ff">
-                <img src="../tienda zapatilla/img/puma.jpeg" alt="Zapatillas Puma" width="100">
+                <img src="puma.jpeg" alt="Zapatillas Puma" width="100">
                 <p>Zapatillas Puma - $150.00</p>
                 <button onclick="agregarAlCarrito(150)">Agregar al Carrito</button>
             </td>
             <td align="center" bgcolor="#f0f8ff">
-                <img src="../tienda zapatilla/img/reebok.jpeg" alt="Zapatillas Reebok" width="100">
+                <img src="reebok.jpeg" alt="Zapatillas Reebok" width="100">
                 <p>Zapatillas Reebok - $140.00</p>
                 <button onclick="agregarAlCarrito(140)">Agregar al Carrito</button>
             </td>
         </tr>
         <tr>
             <td align="center" bgcolor="#f0f8ff">
-                <img src="../tienda zapatilla/img/skechers go malk.jpg" alt="Zapatillas Skechers" width="100">
+                <img src="skechers go malk.jpg" alt="Zapatillas Skechers" width="100">
                 <p>Zapatillas Skechers - $100.00</p>
                 <button onclick="agregarAlCarrito(100)">Agregar al Carrito</button>
             </td>
             <td align="center" bgcolor="#f0f8ff">
-                <img src="../tienda zapatilla/img/new balance.jpeg" alt="Zapatillas New Balance" width="100">
+                <img src="new balance.jpeg" alt="Zapatillas New Balance" width="100">
                 <p>Zapatillas New Balance - $110.00</p>
                 <button onclick="agregarAlCarrito(110)">Agregar al Carrito</button>
             </td>
@@ -195,7 +195,7 @@ function validarFormulario(event) {
 <!-- Mensajes de validación -->
 <p id="mensajeErrorUbicacion" class="mensaje-error"></p>
 <p id="mensajeExitoUbicacion" class="mensaje-exito"></p>
-<script>
+
 
     // Función para validar el formulario de ubicación
     function validarFormularioUbicacion(event) {
@@ -215,7 +215,7 @@ function validarFormulario(event) {
             mensajeExito.textContent = "¡Formulario enviado correctamente!";
         }
     }
-</script>
+
 
             <!-- Columna derecha: Información de la empresa y contacto -->
             <td width="40%" valign="top">
