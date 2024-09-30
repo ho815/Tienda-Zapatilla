@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zapatería Dedos</title>
+    <script>
+        // Variables para el carrito
+        let cantidadProductos = 0;
+        let totalGastado = 0;
+
+        // Función para agregar productos al carrito
+        function agregarAlCarrito(precio) {
+            // Incrementar la cantidad de productos
+            cantidadProductos++;
+            // Sumar el precio al total gastado
+            totalGastado += precio;
+
+            // Actualizar la cantidad de productos en la pantalla
+            document.getElementById("cantidadProductos").textContent = cantidadProductos;
+            // Actualizar el total gastado en la pantalla, asegurando que tenga 2 decimales
+            document.getElementById("totalGastado").textContent = totalGastado.toFixed(2);
+        }
+
+         // Función para animar la información de la empresa
+         function animarTextoEmpresa() {
+            let elemento = document.getElementById("textoEmpresa");
+            let texto = "Zapatería Dedos es una tienda dedicada a ofrecer los mejores modelos de zapatillas de las marcas más reconocidas...";
+            let i = 0;
+            elemento.textContent = "";  // Limpiar el contenido
+            let intervalo = setInterval(function() {
+                elemento.textContent += texto.charAt(i);
+                i++;
+                if (i > texto.length) {
+                    clearInterval(intervalo); // Detener animación al completar el texto
+                }
+            }, 50); // Velocidad de la animación (50ms por carácter)
+        }
+
+      // Función para validar el formulario
+function validarFormulario(event) {
+    event.preventDefault(); // Prevenir el envío del formulario hasta validar
+
+    // Obtener los valores de los campos
+    let name = document.getElementById("nombre").value;
+    let email = document.getElementById("correo").value;
+    let pass = document.getElementById("contraseña").value;
+    let naci = document.getElementById("nacimiento").value;
+    let cv = document.getElementById("curriculo").value;
+    let comentario = document.getElementById("comentario").value;
+    
+    // Obtener elementos para mostrar mensajes de error o éxito
+    let mensajeError = document.getElementById("mensajeError");
+    let mensajeExito = document.getElementById("mensajeExito");
+
+    // Limpiar mensajes previos
+    mensajeError.textContent = "";
+    mensajeExito.textContent = "";
+
+    // Validación básica
+    if (name === "" || email === "" || pass === "" || naci === "" || cv === "" || comentario === "") {
+        mensajeError.textContent = "Por favor, completa todos los campos.";
+    } else {
+        mensajeExito.textContent = "¡Formulario enviado correctamente!";
+        // Aquí puedes agregar la lógica para enviar el formulario si es necesario
+    }
+}
+
+
+        // Iniciar la animación del texto de la empresa al cargar la página
+        window.onload = function() {
+            animarTextoEmpresa();
+        }
+    </script>
+</head>
+<body>
+
+<body style="background-color: #f0f8ff;"> <!-- Color de fondo azul claro -->
+  <!-- Cabecera con logo y menú -->
+  <table width="100%" bgcolor="#000080" cellpadding="10">
+    <tr>
+        <!-- Logo alineado a la izquierda -->
+        <td width="20%" align="left">
+            <img src="img/dedos.jpg" alt="Logo de la tienda" width="80" height="auto">
+        </td>
+
+        <!-- Menú de navegación en el centro -->
+        <td align="center">
+            <a href="#productos" style="color: white; text-decoration: none;">Productos</a> |
+            <a href="#empresa" style="color: white; text-decoration: none;">Empresa</a> |
+            <a href="#contacto" style="color: white; text-decoration: none;">Contacto</a> |
+            <a href="#ubicacion" style="color: white; text-decoration: none;">Ubicación</a> |
+        </td>
+
+        <!-- Cabecera con carrito de compras y menú de navegación -->
+    <header>
+        <div class="header-right">
+            <div class="carrito">
+                <img src="../tienda zapatilla/img/carrito de compras.png" alt="Carrito de Compras" width="30" height="auto">
+                <span id="cantidadProductos">0</span> productos |
+                Total: $<span id="totalGastado">0.00</span>
+            </div>
+        </div>
+        <nav>
+
+<!-- Estructura principal con tabla -->
+<table width="100%" border="0" cellpadding="10">
+    <tr>
+        <!-- Columna izquierda: Productos -->
+        <td width="60%">
+         <!-- Sección de Productos -->
+<section id="productos">
+    <h2 style="margin-bottom: 0; text-align: left;">Productos</h2>
+
+    <!-- Tabla de productos alineada a la izquierda, justo debajo del título -->
+    <table width="40%" cellpadding="5" bgcolor="#d3d3d3" style="margin-left: 0;">
+        <tr>
+            <td align="center" bgcolor="#f0f8ff">
+                <img src="../tienda zapatilla/img/adidas.jpg" alt="Zapatillas Adidas" width="100">
+                <p>Zapatillas Adidas - $120.00</p>
+                <button onclick="agregarAlCarrito(120)">Agregar al Carrito</button>
+            </td>
+            <td align="center" bgcolor="#f0f8ff">
+                <img src="../tienda zapatilla/img/nike.jpeg" alt="Zapatillas Nike" width="100">
+                <p>Zapatillas Nike - $130.00</p>
+                <button onclick="agregarAlCarrito(130)">Agregar al Carrito</button>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#f0f8ff">
+                <img src="../tienda zapatilla/img/puma.jpeg" alt="Zapatillas Puma" width="100">
+                <p>Zapatillas Puma - $150.00</p>
+                <button onclick="agregarAlCarrito(150)">Agregar al Carrito</button>
+            </td>
+            <td align="center" bgcolor="#f0f8ff">
+                <img src="../tienda zapatilla/img/reebok.jpeg" alt="Zapatillas Reebok" width="100">
+                <p>Zapatillas Reebok - $140.00</p>
+                <button onclick="agregarAlCarrito(140)">Agregar al Carrito</button>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" bgcolor="#f0f8ff">
+                <img src="../tienda zapatilla/img/skechers go malk.jpg" alt="Zapatillas Skechers" width="100">
+                <p>Zapatillas Skechers - $100.00</p>
+                <button onclick="agregarAlCarrito(100)">Agregar al Carrito</button>
+            </td>
+            <td align="center" bgcolor="#f0f8ff">
+                <img src="../tienda zapatilla/img/new balance.jpeg" alt="Zapatillas New Balance" width="100">
+                <p>Zapatillas New Balance - $110.00</p>
+                <button onclick="agregarAlCarrito(110)">Agregar al Carrito</button>
+            </td>
+        </tr>
+    </table>
+</section>
+
+  <!-- Columna central: Ubicación -->
+  <td width="40%" valign="top">
+    <section id="ubicacion">
+    <div id="ubicacion" align="center"></div>
+        <h2>Ubicación</h2>
+        <p>Calle Gamarra 592, Trujillo, Perú.</p>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d31598.035096145777!2d-79.06174319318158!3d-8.126470231789744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d-8.1441441!2d-79.0494817!4m3!3m2!1d-8.1113686!2d-79.0259786!5e0!3m2!1ses-419!2spe!4v1725582665992!5m2!1ses-419!2spe" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+   </section>
+
+    <!-- Formulario pequeño de tipo de pago y satisfacción -->
+    <form onsubmit="validarFormularioUbicacion(event)">
+        <fieldset>
+            <legend>Elige tipo de pago</legend>
+            <select id="tipoPago">
+                <option value="contado">Contado</option>
+                <option value="credito">Crédito</option>
+            </select>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Satisfacción por la atención</legend>
+            <input type="checkbox" id="bueno"><label for="bueno"> Bueno</label><br>
+            <input type="checkbox" id="regular"><label for="regular"> Regular</label><br>
+            <input type="checkbox" id="malo"><label for="malo"> Malo</label><br>
+        </fieldset>
+
+        <!-- Botón de envío -->
+        <button type="submit">Enviar</button>
+    </form>
+
+
+<!-- Mensajes de validación -->
+<p id="mensajeErrorUbicacion" class="mensaje-error"></p>
+<p id="mensajeExitoUbicacion" class="mensaje-exito"></p>
+<script>
+
+    // Función para validar el formulario de ubicación
+    function validarFormularioUbicacion(event) {
+        event.preventDefault(); // Prevenir el envío del formulario hasta validar
+        let tipoPago = document.getElementById("tipoPago").value;
+        let mensajeError = document.getElementById("mensajeErrorUbicacion");
+        let mensajeExito = document.getElementById("mensajeExitoUbicacion");
+
+        // Limpiar mensajes previos
+        mensajeError.textContent = "";
+        mensajeExito.textContent = "";
+
+        // Validación básica
+        if (tipoPago === "") {
+            mensajeError.textContent = "Por favor, selecciona un tipo de pago.";
+        } else {
+            mensajeExito.textContent = "¡Formulario enviado correctamente!";
+        }
+    }
+</script>
+
+            <!-- Columna derecha: Información de la empresa y contacto -->
+            <td width="40%" valign="top">
+                <!-- Sección de la Empresa -->
+                <section id="empresa">
+                    <h2>Sobre Nosotros</h2>
+                    <!-- El texto aparecerá con animación -->
+                    <p id="textoEmpresa"></p>
+                </section>
+        
+          <!-- Sección de Contacto -->
+          <section id="contacto">
+            <h2>Contacto</h2>
+            <form onsubmit="validarFormulario(event)">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br><br>
+            
+                <label for="correo">Correo Electrónico:</label><br>
+                <input type="email" id="correo" name="correo"><br><br>
+            
+                <label for="contraseña">Contraseña:</label><br>
+                <input type="password" id="contraseña" name="contraseña"><br><br>
+            
+                <label for="nacimiento">Fecha de Nacimiento:</label><br>
+                <input type="date" id="nacimiento" name="nacimiento"><br><br>
+            
+                <label for="curriculo">Ingresa tu Currículo:</label><br>
+                <input type="file" id="curriculo" name="curriculo"><br><br>
+            
+                <label for="comentario">Comentario:</label><br>
+                <textarea id="comentario" name="comentario"></textarea><br><br>
+            
+                <button type="submit">Enviar</button>
+            </form>
+            
+            <p id="mensajeError" style="color: red;"></p>
+            <p id="mensajeExito" style="color: green;"></p>
+            
+        </section>
+</body>
+</html>
